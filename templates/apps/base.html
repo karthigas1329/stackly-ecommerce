@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'styles/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+</head>
+<body style= "background-color:#white;">
+    <header class="p-3 bg-dark text-white">
+        <div class="row">
+            <div class="col">
+                <h3>Stackly-Store</h3>
+            </div>
+            <div class="col">
+                <div class="d-flex justify-content-center gap-3">
+                    <a class="text-light text-decoration-none" href="/index">Home</a>
+                    <a class="text-light text-decoration-none" href="/about">About</a>
+                    <a class="text-light text-decoration-none" href="/product">Product</a>
+                    <a class="text-light text-decoration-none" href="/detail">Details</a>
+                    <a class="text-light text-decoration-none" href="/cart">Cart</a>
+                    <a class="text-light text-decoration-none" href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<div class="nav2" style="background-color:#102E50;">
+    <nav class="navbar navbar-dark">
+    <a class="navbar-brand" href="">For Purchase</a>
+    <div class="btn-group dropright">
+      <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+        Login/Signup
+      </a>
+
+    <!--login conditions -->
+
+      <div class="dropdown-menu">
+      {% if user.is_authenticated %}
+        <a class="dropdown-item" href="/logout">Log Out</a>
+      {% else %}
+        <a class="dropdown-item " href="/accounts/login">Log In</a>
+        <a class="dropdown-item " href="/signup">Sign Up</a>
+      {% endif %} 
+        </div>
+    </div>
+    <div class="mx-auto" style="width: 10px;">
+    </div>
+    
+    <!--cart -->
+
+    <div class="cart">
+    <a href="/cart">Cart<img src="{%static 'images/cartc.png' %}" width=40px;height=40px;></a>
+   </div>
+    </nav>
+    
+</div>
+
+
+
+    {% block content %}
+
+
+    {% endblock content%}
+
+
+
+
+   <footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>About Us</h4>
+            <p>Your one-stop shop for everything you love.</p>
+            <div class="contact">
+            <h3 style="color: darkgoldenrod;">Address</h3>
+            <p>E-STORE<BR>NO 125/465, ISHWARYAM STREET<BR>RINKU FASHION OPPO<BR>HYDERABAD<br>9999555588</p>
+
+
+        </div>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/eStore.in/"><img src="{%static 'images/facebook.png' %}" alt="Facebook" style="height: 30px;width: 30px;"></a>
+                <a href="#"><img src="{%static 'images/instagram (1).png' %}" alt="Instagram" style="height: 30px;width: 30px;"></a>
+                <a href="#"><img src="{%static 'images/twitter.png' %}" alt="Twitter" style="height: 30px;width: 30px;"></a>
+                <a href="#"><img src="{%static 'images/telegram.png' %}" alt="Instagram" style="height: 30px;width: 30px;"></a>
+                <a href="#"><img src="{%static 'images/linkedin.png' %}" alt="Twitter" style="height: 30px;width: 30px;"></a>
+                <a href="#"><img src="{%static 'images/youtube.png' %}" alt="Twitter" style="height: 30px;width: 30px;"></a>
+            </div>
+        </div>
+
+        <div class="services">
+            <h4 style="color: goldenrod;">Recent News</h4>
+            <ul>
+                <li>About Us</li>
+                <li>Services</li>
+                <li>Get in Touch</li>
+            </ul>
+        </div>
+
+
+    </div>
+    <div class="footer-bottom">
+        &copy; {% now "Y" %} YourShopName. All Rights Reserved.
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

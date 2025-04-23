@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'styles/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+<body style= "background-color:#white;">
+    <header class="p-3 bg-dark text-white">
+        <div class="row">
+            <div class="col">
+                <h3>E-Store</h3>
+            </div>
+            <div class="col">
+                <div class="d-flex justify-content-center gap-3">
+                    <a class="text-light text-decoration-none" href="/index">Home</a>
+                    <a class="text-light text-decoration-none" href="/about">About</a>
+                    <a class="text-light text-decoration-none" href="/product">Product</a>
+                    <a class="text-light text-decoration-none" href="/detail">Details</a>
+                    <a class="text-light text-decoration-none" href="/cart">Cart</a>
+                    <a class="text-light text-decoration-none" href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid ">
+        <div class="d-flex justify-content-center mt-5">
+            <div class="d-flex gap-3 flex-column">
+                <h3>Contact Form</h3>
+                <form method="post" class="row g-3">
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+        
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>About Us</h4>
+            <p>Your one-stop shop for everything you love.</p>
+            <div class="contact">
+            <h3 style="color: darkgoldenrod;">Address</h3>
+            <p>E-STORE<BR>NO 125/465, ISHWARYAM STREET<BR>RINKU FASHION OPPO<BR>HYDERABAD</p>
+
+
+        </div>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="#"><img src="{%static 'images/facebook.png' %}" alt="Facebook" style="height: 30px;width: 30px;"></a>
+                <a href="#"><img src="{%static 'images/instagram (1).png' %}" alt="Instagram" style="height: 30px;width: 30px;"></a>
+                <a href="#"><img src="{%static 'images/twitter.png' %}" alt="Twitter" style="height: 30px;width: 30px;"></a>
+            </div>
+        </div>
+
+        <div class="services">
+            <h4 style="color: goldenrod;">Recent News</h4>
+            <ul>
+                <li>About Us</li>
+                <li>Services</li>
+                <li>Get in Touch</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        &copy; {% now "Y" %} YourShopName. All Rights Reserved.
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
